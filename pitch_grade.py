@@ -39,4 +39,4 @@ if st.sidebar.button("Compute Grades"):
     
     st.subheader(f"Grades for {pitch_type}")
     for metric, grade in result.items():
-        st.write(f"{metric.replace('_', ' ').title()}: {grade:.2f} grade")
+        st.write(f"{metric.replace('_', ' ').title()}: {int(round(grade))} grade")
