@@ -19,7 +19,7 @@ def compute_grades(df, pitch_type, input_values):
         std = filtered_df[col].std()
         z_score = (input_values[col] - mean) / std
         grades[col] = 50 + (z_score * 10)  # Convert to 20-80 scale
-        grades[col] = max(20, min(80, grades[col]))  # Ensure within scale range
+        grades[col] = np.round(max(20, min(80, grades[col])),0)  # Ensure within scale range
     
     return grades
 
